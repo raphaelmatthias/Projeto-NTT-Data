@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\cypress",
+    "\\cypress\\e2e",
+    "\\cypress\\e2e\\CatalogPage",
+    "\\cypress\\e2e\\LoginPage",
+    "\\cypress\\e2e\\RegisterPage",
+    "\\cypress\\support",
+    "\\cypress\\support\\Elements",
+    "\\cypress\\support\\Pages"
+  ],
+  "SelectedNode": "\\cypress\\e2e\\CatalogPage\\AddProcutsToList.cy.js",
+  "PreviewInSolutionExplorer": false
+}

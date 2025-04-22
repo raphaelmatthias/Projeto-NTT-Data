@@ -24,6 +24,16 @@ class LoginPage{
         }
     }
 
+    Login(user,password){
+        cy.visit('https://front.serverest.dev/login');
+            cy.get(LoginElements.user()).type(user);
+            cy.get(LoginElements.password()).type(password);
+            cy.get(LoginElements.submitButton()).click();
+    }
+     CheckLoggedIn(){
+         cy.url().should('include', '/home');
+    }
+
     GoToRegisterPage(){
         cy.visit('https://front.serverest.dev/login');
         cy.get(LoginElements.registerButton()).click();
