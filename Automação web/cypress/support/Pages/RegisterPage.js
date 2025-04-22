@@ -13,6 +13,7 @@ class RegisterPage{
 
     }
     CheckSuccessfullRegister(){
+         cy.get(RegisterElements.sucessMsg()).contains('Cadastro realizado com sucesso').should('be.visible');
          cy.url().should('include', '/home');
     }
 

@@ -2,11 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\e2e",
-    "\\e2e\\LoginPage",
-    "\\support",
-    "\\support\\Elements",
-    "\\support\\Pages"
+    "\\support"
   ],
-  "SelectedNode": "\\e2e\\LoginPage\\ErrorMessageCheck.cy.js",
   "PreviewInSolutionExplorer": false
 }

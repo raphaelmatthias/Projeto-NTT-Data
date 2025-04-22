@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// cypress/support/commands.js
+Cypress.Commands.add('loginEGuardarToken', (email, password) => {
+  cy.request('POST', 'https://serverest.dev/login', {
+    email: email,
+    password: password
+  }).then((res) => {
+    const token = res.body.authorization;
+    cy.wrap(token).as('token');
+  });
+});
