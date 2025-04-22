@@ -24,6 +24,11 @@ class LoginPage{
         }
     }
 
+    GoToRegisterPage(){
+        cy.visit('https://front.serverest.dev/login');
+        cy.get(LoginElements.registerButton()).click();
+    }
+
 }
 
 export default new LoginPage();
