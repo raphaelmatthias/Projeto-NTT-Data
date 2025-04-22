@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\cypress",
+    "\\cypress\\e2e",
+    "\\cypress\\e2e\\Cart",
+    "\\cypress\\e2e\\Login",
+    "\\cypress\\e2e\\Register",
+    "\\cypress\\support",
+    "\\cypress\\support\\Methods"
+  ],
+  "SelectedNode": "\\cypress\\e2e\\Cart\\CreateCart.cy.js",
+  "PreviewInSolutionExplorer": false
+}

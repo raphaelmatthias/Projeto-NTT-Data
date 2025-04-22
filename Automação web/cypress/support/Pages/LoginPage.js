@@ -13,11 +13,11 @@ class LoginPage{
 
     CheckEmptyCredential(credential){
         cy.visit('https://front.serverest.dev/login');
-        if(credential = "user"){
+        if(credential == "user"){
             cy.get(LoginElements.password()).type('minhaSenha');
             cy.get(LoginElements.submitButton()).click();
             cy.get(LoginElements.errorMsg()).contains('Email é obrigatório').should('be.visible');
-        } else if (credential = "password"){
+        } else if (credential == "password"){
             cy.get(LoginElements.user()).type('emailincorreto@gmail.com');
             cy.get(LoginElements.submitButton()).click();
             cy.get(LoginElements.errorMsg()).contains('Password é obrigatório').should('be.visible');

@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
+class RegisterMethods{
+    
+   RegisterUser(){
 
-
-describe('Cadastro de usuário via API', () => {
-  it('Deve cadastrar um novo usuário com sucesso', () => {
     const novoUsuario = {
       nome: 'raphinha da Silva',
       email: `teste${Date.now()}'@exemplo.com`, 
@@ -21,7 +21,6 @@ describe('Cadastro de usuário via API', () => {
       expect(response.status).to.eq(201); 
       expect(response.body).to.have.property('_id');
     });
-  });
-
-
-});
+    }
+  }
+  export default new RegisterMethods();

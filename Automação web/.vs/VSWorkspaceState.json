@@ -10,6 +10,6 @@
     "\\cypress\\support\\Elements",
     "\\cypress\\support\\Pages"
   ],
-  "SelectedNode": "\\cypress\\e2e\\CatalogPage\\AddProcutsToList.cy.js",
+  "SelectedNode": "\\cypress\\e2e\\RegisterPage\\Register.cy.js",
   "PreviewInSolutionExplorer": false
 }

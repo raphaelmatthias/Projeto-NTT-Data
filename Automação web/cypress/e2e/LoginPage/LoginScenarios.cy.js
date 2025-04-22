@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 import LoginPage from "../../support/Pages/LoginPage"
-describe('Validate error messages', () => {
+describe('Login scenarios', () => {
 
- it('SuccessfullLogin', () => {
+ it('Successfull Login', () => {
     LoginPage.Login("contatoraphaelmathias@gmail.com","raphael.123");
     LoginPage.CheckLoggedIn();
     });
@@ -12,11 +12,11 @@ describe('Validate error messages', () => {
     });
 
      it('Validate empty email', () => {
-    LoginPage.CheckIncorrectCredentials("user");
+    LoginPage.CheckEmptyCredential("user");
     });
 
      it('Validate empty password', () => {
-    LoginPage.CheckIncorrectCredentials("password");
+    LoginPage.CheckEmptyCredential("password");
     });
 
    

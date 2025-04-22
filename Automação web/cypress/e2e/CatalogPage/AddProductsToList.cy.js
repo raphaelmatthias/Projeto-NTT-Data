@@ -2,9 +2,9 @@
 import LoginPage from "../../support/Pages/LoginPage"
 import CatalogPage from "../../support/Pages/CatalogPage"
 
-describe('Validate error messages', () => {
+describe('Log the user in the system then add products to list', () => {
 
- it('AddProductsToList', () => {
+ it('Add products to list', () => {
     LoginPage.Login("contatoraphaelmathias@gmail.com","raphael.123");
     LoginPage.CheckLoggedIn();
     CatalogPage.GoToItemPage();
