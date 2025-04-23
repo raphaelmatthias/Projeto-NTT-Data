@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('emailJaCadastrado', (emailFixo = 'contatoraphaelmathias@gmail.com') => {
+  return cy.request('GET', 'https://serverest.dev/usuarios').then((response) => {
+    const usuarios = response.body.usuarios || [];
+
+    const emailAlvo = emailFixo.trim().toLowerCase();
+
+    const emailEncontrado = usuarios.find(user => {
+      const emailUsuario = user.email?.trim().toLowerCase();
+      const match = emailUsuario === emailAlvo;
+      console.log(`Comparando: "${emailUsuario}" === "${emailAlvo}" -> ${match}`);
+      return match;
+    });
+
+    return !!emailEncontrado;
+  });
+});
+
+
+
+

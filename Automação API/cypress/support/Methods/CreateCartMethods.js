@@ -1,32 +1,36 @@
 /// <reference types="cypress" />
 
 class CreateCartMethods {
-  CreateCart(idProduct, quantity, idUser) {
+  CreateCart(idProduct, quantity) {
     cy.get('@token').then((token) => {
-      cy.request({
-        method: 'GET',
-        url: `https://serverest.dev/carrinhos?idUsuario=`+ idUser,
-        headers: {
-          Authorization: token
-        }
-      }).then((carrinhosResponse) => {
-        if (carrinhosResponse.body.quantidade > 0) {
-          cy.request({
-            method: 'DELETE',
-            url: 'https://serverest.dev/carrinhos/cancelar-compra',
-            headers: {
-              Authorization: token
-            }
-          }).then((deleteResponse) => {
-            expect(deleteResponse.status).to.eq(200);
-            expect(deleteResponse.body).to.have.property('message').and.contain('sucesso');
+      cy.get('@idUsuario').then((idUsuario) => {
+        cy.request({
+          method: 'GET',
+          url: `https://serverest.dev/carrinhos?idUsuario=${idUsuario}`,
+          headers: {
+            Authorization: token
+          }
+        }).then((carrinhosResponse) => {
+          if (carrinhosResponse.body.quantidade > 0) {
+            cy.request({
+              method: 'DELETE',
+              url: 'https://serverest.dev/carrinhos/cancelar-compra',
+              headers: {
+                Authorization: token
+              }
+            }).then((deleteResponse) => {
+              expect(deleteResponse.status).to.eq(200);
+              expect(deleteResponse.body).to.have.property('message').and.contain('sucesso');
+              createNewCart(token);
+            });
+          } else {
             createNewCart(token);
-          });
-        } else {
-          createNewCart(token); 
-        }
+          }
+        });
       });
     });
+
+
 
     function createNewCart(token) {
       const produtoParaAdicionar = {

@@ -6,10 +6,18 @@ import RegisterElements from "../elements/RegisterElements"
 class RegisterPage{
 
     FillFields(){
-        cy.get(RegisterElements.name()).type('Raphael');
-        cy.get(RegisterElements.email()).type(`${Date.now()}@gmail.com`);
-        cy.get(RegisterElements.password()).type('SenhaTeste');
-        cy.get(RegisterElements.registerButton()).click();
+        cy.emailJaCadastrado().then((existe) => {
+            cy.log('Email existe?', existe);
+  const email = existe ? `${Date.now()}@gmail.com` : 'contatoraphaelmathias@gmail.com';
+  cy.log(existe);
+  cy.get(RegisterElements.name()).type('Raphael');
+  cy.get(RegisterElements.email()).type(email);
+  cy.get(RegisterElements.password()).type('raphael.123');
+  cy.get(RegisterElements.registerButton()).click();
+});
+
+      
+
 
     }
     CheckSuccessfullRegister(){

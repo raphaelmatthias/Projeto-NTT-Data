@@ -33,3 +33,15 @@ Cypress.Commands.add('loginEGuardarToken', (email, password) => {
     cy.wrap(token).as('token');
   });
 });
+Cypress.Commands.add('recuperarIDUsuario', (email) => {
+  cy.request('GET', 'https://serverest.dev/usuarios').then((res) => {
+    const usuarios = res.body.usuarios || [];
+    const usuario = usuarios.find(u => u.email.toLowerCase() === email.toLowerCase());
+
+    if (usuario && usuario._id) {
+      cy.wrap(usuario._id).as('idUsuario'); // Armazena com alias se quiser usar depois com this.idUsuario
+    } else {
+      throw new Error(`Usuário com email "${email}" não encontrado.`);
+    }
+  });
+});

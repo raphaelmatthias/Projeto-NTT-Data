@@ -2,7 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\e2e",
+    "\\e2e\\01-RegisterPage",
+    "\\e2e\\02-LoginPage",
+    "\\e2e\\03-CatalogPage",
     "\\support"
   ],
+  "SelectedNode": "\\e2e\\03-CatalogPage",
   "PreviewInSolutionExplorer": false
 }

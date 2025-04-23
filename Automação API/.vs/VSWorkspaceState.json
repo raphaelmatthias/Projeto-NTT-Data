@@ -9,6 +9,6 @@
     "\\cypress\\support",
     "\\cypress\\support\\Methods"
   ],
-  "SelectedNode": "\\cypress\\e2e\\Cart\\CreateCart.cy.js",
+  "SelectedNode": "\\cypress\\support\\Methods\\RegisterMethods.js",
   "PreviewInSolutionExplorer": false
 }
